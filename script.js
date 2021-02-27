@@ -24,11 +24,24 @@ function isValidEmail(email) {
     return regexp.test(String(email).toLowerCase());
 };
 
+// check required fields
+function checkRequired(inputArray) {
+    inputArray.forEach(function(input) {
+        if (input.value.trim() === "") {
+            showError(input, `${getFieldName(input)} requerido`);
+        } else {
+            showSuccess(input);
+        };
+    });
+};
+
+// get field name
+function getFieldName(input) {
+    return input.id.charAt(0).toUpperCase().concat(input.id.slice(1));
+};
+
 // event listeners
 form.addEventListener("submit", function (e) {
     e.preventDefault();
-    (usuario.value === "") ? (showError(usuario, "Usuário inválido")) : (showSuccess(usuario));
-    (!isValidEmail(email.value)) ? (showError(email, "Email inválido")) : (showSuccess(email));
-    (senha.value === "") ? (showError(senha, "Senha inválida")) : (showSuccess(senha));
-    (senha2.value === "") ? (showError(senha2, "Confirmação de senha inválida")) : (showSuccess(senha2));
+    checkRequired([usuario, email, senha, senha2]);
 });
