@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Validador de formulário</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form" class="form">
+            <h2>Registre-se conosco</h2>
+            <div class="form-control">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" placeholder="Digite seu usuário">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Digite seu email">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="senha2">Confirmar senha</label>
+                <input type="password" id="senha2" placeholder="Digite sua senha novamente">
+                <small>Error message</small>
+            </div>
+            <button>Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
