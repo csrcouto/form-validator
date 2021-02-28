@@ -31,7 +31,7 @@ function checkEmail(input) {
 // check required fields
 function checkRequired(inputArray) {
     inputArray.forEach(function(input) {
-        (input.value.trim() === "") ? (showError(input, `${getFieldName(input)} requerido`)) : (showSuccess(input));
+        (input.value.trim() === "") ? (showError(input, `${getFieldName(input)} requerido(a)`)) : (showSuccess(input));
     });
 }
 
@@ -49,6 +49,8 @@ function checkLength(input, min, max) {
 function checkPasswordsMatch(input1, input2) {
     if (input1.value !== input2.value) {
         showError(input2, "Senhas não conferem");
+    } else if (input1.value === "") {
+        showError(input2, "Confirmação de senha necessária");
     }
 }
 
